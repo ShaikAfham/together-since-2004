@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Together Since 2004</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Cursive Font for Letter -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+
+    <!-- Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Background Particles -->
+<canvas id="bgParticles"></canvas>
+
+<!-- HERO SECTION -->
+<header class="hero">
+    <h1 class="hero-title">Together Since 2004</h1>
+    <p class="hero-subtitle">A Journey of Love, Growth & Beautiful Memories</p>
+
+    <!-- LIVE TIMER -->
+    <div id="anniversaryCounter" class="hero-counter">
+        <div class="time-row">
+            <span id="years"></span>
+            <span id="months"></span>
+            <span id="days"></span>
+        </div>
+        <div class="time-row">
+            <span id="hours"></span>
+            <span id="minutes"></span>
+            <span id="seconds"></span>
+        </div>
+    </div>
+
+    <!-- HERO CHAT BUTTON -->
+    <div class="hero-chat-container">
+        <button id="chatToggleHero" class="hero-chat-btn">
+            ✨ Ask About Our Journey
+        </button>
+    </div>
+</header>
+
+
+<!-- CAROUSEL SECTION -->
+<section class="section">
+    <h2>Our Milestones</h2>
+
+    <div class="carousel-container">
+        <button class="carousel-btn prev">❮</button>
+
+        <div class="carousel-slide">
+            <div id="carouselContent" class="carousel-content"></div>
+        </div>
+
+        <button class="carousel-btn next">❯</button>
+    </div>
+</section>
+
+
+<!-- TIMELINE SECTION -->
+<section class="section">
+    <h2>Our Journey</h2>
+    <div id="timeline" class="timeline"></div>
+</section>
+
+
+<!-- LETTER SECTION -->
+<!-- LETTER SECTION -->
+<section class="section legacy-section">
+    <h2 class="legacy-title">A Special Gift From The Heart</h2>
+
+    <div class="envelope-container" id="envelopeContainer">
+
+        <div class="envelope">
+
+            <div class="envelope-base"></div>
+            <div class="envelope-flap"></div>
+
+            <!-- 🔥 MOVE LETTER INSIDE ENVELOPE -->
+            <div class="letter">
+                <div id="typewriterText" class="letter-content"></div>
+
+                <div class="letter-signature">
+                    With endless love,<br>
+                    <span class="signature-name">Your son, Afham</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- GEMINI STYLE CHATBOT -->
+<div id="chatWidget" class="chat-widget">
+    
+    <div class="chat-header">
+        <span>Family Assistant</span>
+        <span id="closeChat" style="cursor:pointer;">✕</span>
+    </div>
+
+    <div id="chatMessages"></div>
+
+    <!-- QUICK QUESTIONS -->
+    <div id="quickQuestions" class="quick-questions">
+        <button class="quick-btn">How many children do we have?</button>
+        <button class="quick-btn">What are our children's names?</button>
+        <button class="quick-btn">Where do we live?</button>
+        <button class="quick-btn">When did we get married?</button>
+        <button class="quick-btn">Tell us about our journey</button>
+    </div>
+
+    <!-- CHAT INPUT -->
+    <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Ask about your journey...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+</div>
+
+
+<!-- LOAD JS (ONLY ONCE) -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
